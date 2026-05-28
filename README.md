@@ -1,6 +1,6 @@
-# TAG Investimentos — Desafio Técnico: Automação com Python e IA
+# # Análise de Carteiras com IA
 
-Sistema de análise automatizada de carteiras de clientes utilizando Python, pandas e IA generativa (Gemini). Desenvolvido como solução para o processo seletivo de estágio em tecnologia da TAG Investimentos.
+Sistema de análise automatizada de carteiras de clientes utilizando Python, pandas e IA generativa (Gemini). Projeto desenvolvido para simular um pipeline automatizado de análise de carteiras financeiras com apoio de IA generativa.
 
 ---
 
@@ -16,7 +16,7 @@ O sistema processa uma planilha com dados de clientes, valida e trata inconsist�
 tag_desafio/
 │
 ├── data/                        # Arquivos de entrada (não versionados)
-│   └── clientes_TAG.xlsx
+│   └── clientes_carteira.xlsx
 │
 ├── output/                      # Relatórios gerados (não versionados)
 │   ├── relatorio.json
@@ -147,7 +147,7 @@ O JSON é consumível por outros sistemas (dashboards, planilhas, APIs). O TXT �
 | Melhoria | Valor para estágio | Observação |
 |---|---|---|
 | Envio por e-mail (smtplib) | Alto | Demonstra integração ponta-a-ponta |
-| Exportação para Google Sheets | Alto | Encaixa no workflow da TAG |
+| Exportação para Google Sheets | Alto | Encaixa no workflow corporativo |
 | Testes unitários (pytest) | Alto | Diferencial técnico relevante |
 | Cache de respostas da IA | Médio | Reduz custo em reprocessamentos |
 | Docker | Baixo | Útil, mas excessivo para estágio |
