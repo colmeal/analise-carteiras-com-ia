@@ -1,0 +1,36 @@
+# Segurança
+
+.env
+credentials/
+
+# Dados reais
+
+data/clientes_TAG.xlsx
+
+# Outputs
+
+output/
+
+# Python
+
+**pycache**/
+*.pyc
+*.pyo
+
+# Ambientes virtuais
+
+.venv/
+venv/
+
+# Build
+
+*.egg-info/
+dist/
+
+# VSCode
+
+.vscode/
+
+# Sistema
+.DS_Store
+Thumbs.db
