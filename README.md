@@ -70,23 +70,60 @@ analise-carteiras-com-ia/
 
 ## Instalação
 
+### 1. Clone o repositório
+
 ```bash
-# 1. Clone o repositório
-git clone <url-do-repositorio>
+git clone https://github.com/colmeal/analise-carteiras-com-ia.git
 cd analise-carteiras-com-ia
-
-# 2. Crie e ative um ambiente virtual
-python -m venv .venv
-.venv\Scripts\activate      # Windows
-source .venv/bin/activate   # Linux/Mac
-
-# 3. Instale as dependências
-pip install -r requirements.txt
-
-# 4. Configure a chave de API
-cp .env.example .env
-# Edite o .env e insira sua GEMINI_API_KEY
 ```
+
+### 2. Crie e ative um ambiente virtual
+
+#### Windows
+
+```bash
+python -m venv .venv
+.venv\Scripts\activate
+```
+
+#### Linux/Mac
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+### 3. Instale as dependências
+
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Configure a chave de API
+
+```bash
+cp .env.example .env
+```
+
+Edite o arquivo `.env` e insira sua `GEMINI_API_KEY`.
+
+### 5. Configure o Google Sheets (opcional)
+
+Adicione a credencial da Service Account em:
+
+```text
+credentials/service_account.json
+```
+
+Compartilhe a planilha Google Sheets com o e-mail da Service Account.
+
+### 6. Execute o projeto
+
+```bash
+python src/main.py
+```
+
+
 ## Arquivos necessários (não versionados)
 
 Os arquivos abaixo não estão no repositório por segurança.
