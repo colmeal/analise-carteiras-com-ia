@@ -1,7 +1,7 @@
 """
-main.py
-Ponto de entrada do projeto TAG Investimentos — Desafio Técnico.
-Orquestra o pipeline completo: leitura → validação → classificação → IA → relatório.
+Ponto de entrada — pipeline completo de análise de carteiras com IA.
+Orquestra: leitura → validação → classificação → IA → relatório.
+
 """
 
 import sys
@@ -23,7 +23,7 @@ logger = get_logger(__name__)
 
 def main() -> None:
     logger.info("=" * 55)
-    logger.info("  TAG Investimentos — Análise de Carteiras")
+    logger.info(" Análise de Carteiras com IA ")
     logger.info("=" * 55)
 
     logger.info("[1/4] Lendo planilha...")

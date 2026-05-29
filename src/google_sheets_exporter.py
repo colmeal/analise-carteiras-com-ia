@@ -24,7 +24,7 @@ def exportar_para_sheets():
 
         client = gspread.Client(auth=credentials)
 
-        spreadsheet = client.open("Relatorio TAG Investimentos")
+        spreadsheet = client.open("Relatorio Analise Carteiras IA")
 
         worksheet = spreadsheet.sheet1
 
@@ -54,5 +54,6 @@ def exportar_para_sheets():
 
         logger.info("✅ Dados enviados para Google Sheets!")
 
-    except Exception as e:
-        logger.error("Erro ao enviar para Google Sheets: %s", e)
+    except Exception as exc:
+        logger.error("Erro ao enviar para Google Sheets: %s", exc)
+        raise RuntimeError(f"Falha na exportação para Google Sheets: {exc}") from exc
