@@ -59,7 +59,7 @@ analise-carteiras-com-ia/
 - **Python 3.11+**
 - **pandas** — leitura e manipulação da planilha
 - **openpyxl** — engine para arquivos `.xlsx`
-- **google-generativeai** — API Gemini (gemini-2.5-flash-lite)
+- **google-genai** — API Gemini (gemini-2.5-flash-lite)
 - **python-dotenv** — carregamento seguro de variáveis de ambiente
 - **logging** — logs estruturados com timestamp e nível
 * **gspread** — integração com Google Sheets
@@ -87,6 +87,18 @@ pip install -r requirements.txt
 cp .env.example .env
 # Edite o .env e insira sua GEMINI_API_KEY
 ```
+## Arquivos necessários (não versionados)
+
+Os arquivos abaixo não estão no repositório por segurança.
+Crie-os manualmente antes de rodar o projeto:
+
+| Arquivo | Descrição |
+|---|---|
+| `.env` | Chave da API Gemini (veja `.env.example`) |
+| `credentials/sua_service_account.json` | Credencial JSON baixada do Google Cloud Console |
+| `data/clientes_carteira.xlsx` | Planilha com os dados dos clientes |
+
+Nenhum desses arquivos vai para o GitHub — todos estão no `.gitignore`.
 
 ---
 
@@ -151,15 +163,14 @@ O JSON é consumível por outros sistemas (dashboards, planilhas, APIs). O TXT �
 
 ## Melhorias futuras
 
-| Melhoria | Valor para estágio | Observação |
+| Melhoria | Prioridade | Observação |
 |---|---|---|
-| Envio por e-mail (smtplib) | Alto | Demonstra integração ponta-a-ponta |
-| Dashboard web com Streamlit | Médio | Facilita visualização interativa |
-| Testes unitários (pytest) | Alto | Diferencial técnico relevante |
-| Cache de respostas da IA | Médio | Reduz custo em reprocessamentos |
-| Docker | Baixo | Útil, mas excessivo |
-| CI/CD | Baixo | Fora do escopo |
-
+| Testes unitários (pytest) | Alta | Diferencial técnico relevante |
+| Envio por e-mail (smtplib) | Alta | Demonstra integração ponta-a-ponta |
+| Cache de respostas da IA | Média | Reduz custo em reprocessamentos |
+| Dashboard web com Streamlit | Média | Facilita visualização interativa |
+| Docker | Baixa | Útil, mas fora do escopo atual |
+| CI/CD | Baixa | Fora do escopo |
 ---
 
 ## Segurança

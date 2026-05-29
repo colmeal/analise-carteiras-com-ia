@@ -1,6 +1,6 @@
 pandas==2.2.2
 openpyxl==3.1.2
-google-generativeai==0.7.2
+google-genai==2.6.0
 python-dotenv==1.0.1
-gspread
-google-auth
+gspread==6.2.1
+google-auth==2.53.0

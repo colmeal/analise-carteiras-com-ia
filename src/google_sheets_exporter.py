@@ -1,17 +1,19 @@
 import json
 import gspread
+from pathlib import Path
 from google.oauth2.service_account import Credentials
 from utils import get_logger
+from config import BASE_DIR
 
 logger = get_logger(__name__)
 
-SERVICE_ACCOUNT_FILE = "../credentials/tag-investimentos-api-3e63c4e18cdd.json"
+SERVICE_ACCOUNT_FILE = BASE_DIR / "credentials" / "tag-investimentos-api-3e63c4e18cdd.json"
+RELATORIO_JSON_PATH  = BASE_DIR / "output" / "relatorio.json"
 
 SCOPES = [
     "https://www.googleapis.com/auth/spreadsheets",
     "https://www.googleapis.com/auth/drive"
 ]
-
 
 def exportar_para_sheets():
     try:
@@ -20,7 +22,7 @@ def exportar_para_sheets():
             scopes=SCOPES
         )
 
-        client = gspread.authorize(credentials)
+        client = gspread.Client(auth=credentials)
 
         spreadsheet = client.open("Relatorio TAG Investimentos")
 
@@ -38,7 +40,7 @@ def exportar_para_sheets():
 
         worksheet.append_row(headers)
         
-        with open("../output/relatorio.json", "r", encoding="utf-8") as f:
+        with open(RELATORIO_JSON_PATH, "r", encoding="utf-8") as f:
             dados = json.load(f)
 
         for cliente in dados["clientes"]:
