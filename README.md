@@ -16,7 +16,7 @@ O sistema processa uma planilha com dados de clientes, valida e trata inconsist�
 analise-carteiras-com-ia/
 │
 ├── data/                        # Arquivos de entrada (não versionados)
-│   └── clientes_carteira.xlsx
+│   └── clientes_TAG.xlsx
 │
 ├── output/                      # Relatórios gerados (não versionados)
 │   ├── relatorio.json
@@ -120,7 +120,8 @@ Compartilhe a planilha Google Sheets com o e-mail da Service Account.
 ### 6. Execute o projeto
 
 ```bash
-python src/main.py
+cd src
+python main.py
 ```
 
 
@@ -132,8 +133,8 @@ Crie-os manualmente antes de rodar o projeto:
 | Arquivo | Descrição |
 |---|---|
 | `.env` | Chave da API Gemini (veja `.env.example`) |
-| `credentials/sua_service_account.json` | Credencial JSON baixada do Google Cloud Console |
-| `data/clientes_carteira.xlsx` | Planilha com os dados dos clientes |
+| `credentials/service_account.json` | Credencial JSON baixada do Google Cloud Console |
+| `data/clientes_TAG.xlsx` | Planilha com os dados dos clientes |
 
 Nenhum desses arquivos vai para o GitHub — todos estão no `.gitignore`.
 
@@ -152,7 +153,7 @@ Obtenha uma chave gratuita em: [aistudio.google.com](https://aistudio.google.com
 ## Execução
 
 ```bash
-# Coloque a planilha em data/clientes_carteira.xlsx
+# Coloque a planilha na pasta data/ antes de executar
 # Depois, dentro da pasta src/:
 
 cd src
